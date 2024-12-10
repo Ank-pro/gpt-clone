@@ -1,42 +1,65 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.open-bar ,.search,.new-chat,.close-sidebar{
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.open-bar:hover ,.search:hover,.new-chat:hover,.close-sidebar:hover{
+    background-color: rgb(210, 205, 205);
+}
+.close-sidebar{
+    position: relative;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.top {
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.top-1 {
+  display: flex;
+  gap: 5px;
+}
+
+.sidebar {
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background-color: white; /* Optional background */
+    z-index: 10;
+    border-right: 1px solid black;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .sidebar.open {
+    animation: openSidebar 0.5s forwards; /* Play animation on open */
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .sidebar.close {
+    animation: closeSidebar 0.3s forwards; /* Play animation on close */
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+  
+  /* Animation for opening */
+  @keyframes openSidebar {
+    from {
+      width: 0;
+    }
+    to {
+      width: 18vw; /* Full width when open */
+    }
+  }
+  
+  /* Animation for closing */
+  @keyframes closeSidebar {
+    from {
+      width: 18vw;
+    }
+    to {
+      width: 0;
+    }
+  }
+  
+  
