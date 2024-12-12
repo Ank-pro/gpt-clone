@@ -1,65 +1,71 @@
-.open-bar ,.search,.new-chat,.close-sidebar{
-  width: 35px;
-  height: 35px;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.open-bar:hover ,.search:hover,.new-chat:hover,.close-sidebar:hover{
-    background-color: rgb(210, 205, 205);
-}
-.close-sidebar{
-    position: relative;
-}
-
-.top {
-  display: flex;
-  justify-content: space-between;
-}
-
-.top-1 {
-  display: flex;
-  gap: 5px;
-}
-
-.sidebar {
-    width: 0;
-    height: 100vh;
+.app {
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
     position: fixed;
     top: 0;
     left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #f1f1f1;
     overflow-x: hidden;
-    background-color: white; /* Optional background */
-    z-index: 10;
-    border-right: 1px solid black;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   }
   
   .sidebar.open {
-    animation: openSidebar 0.5s forwards; /* Play animation on open */
+    width: 25%;
   }
   
-  .sidebar.close {
-    animation: closeSidebar 0.3s forwards; /* Play animation on close */
+  .sidebar-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: 0.3s;
   }
   
-  /* Animation for opening */
-  @keyframes openSidebar {
-    from {
-      width: 0;
-    }
-    to {
-      width: 18vw; /* Full width when open */
-    }
+  .sidebar-link:hover {
+    background-color: #ddd;
   }
   
-  /* Animation for closing */
-  @keyframes closeSidebar {
-    from {
-      width: 18vw;
-    }
-    to {
-      width: 0;
-    }
+  .close-button {
+    padding: 10px 20px;
+    background: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
   }
   
+  .main {
+    transition: margin-left 0.5s;
+    border: 1px solid black;
+  }
+  
+  .main.shifted {
+    margin-left: 18%;
+  }
+  
+  .header {
+    background-color: #009688;
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .container {
+    padding: 16px;
+  }
   

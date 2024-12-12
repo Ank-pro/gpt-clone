@@ -1,7 +1,7 @@
-import "../App.css";
-import openImg from "../assets/open.png";
-import searchImg from "../assets/search.png";
-import chatImg from "../assets/newChat.png";
+import "./side.css";
+import openImg from "../../assets/open.png";
+import searchImg from "../../assets/search.png";
+import chatImg from "../../assets/newChat.png";
 
 export function SideBar({ setShowSidebar ,isOpen }) {
   return (
