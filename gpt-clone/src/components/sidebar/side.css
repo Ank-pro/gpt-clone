@@ -1,11 +1,11 @@
-.open-bar ,.search,.new-chat,.close-sidebar{
+.open-bar ,.search,.new-chat{
     width: 35px;
     height: 35px;
     padding: 5px;
     cursor: pointer;
     border-radius: 5px;
   }
-  .open-bar:hover ,.search:hover,.new-chat:hover,.close-sidebar:hover{
+  .open-bar:hover ,.search:hover,.new-chat:hover{
       background-color: rgb(210, 205, 205);
   }
   .close-sidebar{
@@ -30,37 +30,14 @@
       top: 0;
       left: 0;
       overflow-x: hidden;
+      transition: width 0.3s;
       background-color: rgb(241, 240, 240); 
-      /* box-shadow: 1px 2px 10px 3px rgb(233, 231, 231); */
-      z-index: 10;
+      
     }
     
     .sidebar.open {
-      animation: openSidebar 0.5s forwards; /* Play animation on open */
+      width: 18vw; 
     }
     
-    .sidebar.close {
-      animation: closeSidebar 0.5s forwards; /* Play animation on close */
-    }
-    
-    /* Animation for opening */
-    @keyframes openSidebar {
-      from {
-        width: 0;
-      }
-      to {
-        width: 18vw; /* Full width when open */
-      }
-    }
-    
-    /* Animation for closing */
-    @keyframes closeSidebar {
-      from {
-        width: 18vw;
-      }
-      to {
-        width: 0;
-      }
-    }
     
     

@@ -2,16 +2,21 @@ import "./side.css";
 import openImg from "../../assets/open.png";
 import searchImg from "../../assets/search.png";
 import chatImg from "../../assets/newChat.png";
+import {useDispatch, useSelector} from 'react-redux'
+import { toggleSidebar } from "../../slices/centralSlice";
 
-export function SideBar({ setShowSidebar ,isOpen }) {
+export function SideBar() {
+  const dispatch = useDispatch();
+  const {showSidebar : isOpen} = useSelector((state)=> state.central)
+
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'close'}`}>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="top">
         <img 
-          className="open-bar" 
+          className="open-bar"
           src={openImg} 
           alt="" 
-          onClick={() => setShowSidebar(false)} 
+          onClick={() => dispatch(toggleSidebar())} 
         />
         <div className="top-1">
           <img className="search" src={searchImg} alt="" />

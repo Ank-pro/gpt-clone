@@ -1,20 +1,68 @@
-.chat-list{
-    display: flex;
-    margin-left: 18vw;
-    border: 1px solid black;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-20%);
-    height: 100vh;
+.main {
+  display: flex;
+  justify-content: space-between;
+  transition: margin-left 0.3s;
 }
-.chat input{
-    width: 30vw;
-    background-color: rgb(195, 192, 192);
-    padding: 15px;
+
+.main.shift {
+  margin-left: 18vw;
+}
+
+.close-side{
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+#app-name {
+  /* display: inline-block; */
+  /* line-height: 1; */
+  font-weight: 700;
+  margin-top: 1.15rem;
+  padding-left: 10px;
+  color: rgb(129, 129, 127);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  /* border: 1px solid black; */
+  white-space: nowrap;
+}
+
+.close-sidebar {
+  margin: 8px;
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.close-sidebar:hover {
+  background-color: rgb(210, 205, 205);
+}
+
+.chat-list {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-20%);
+  height: 100vh;
+}
+.chat input {
+  width: 40vw;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: rgb(231, 227, 227);
+  padding: 15px;
 }
 .heading {
-    font-size: 1.5rem;
-    color: black;
+  font-size: 1.5rem;
+  color: black;
+}
+.profile {
+  width: 45px;
+  height: 45px;
+  padding: 5px;
+  cursor: pointer;
 }
