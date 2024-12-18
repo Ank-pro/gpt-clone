@@ -40,16 +40,23 @@
 
 .chat-list {
   display: flex;
-  width: 100vw;
+  /* width: 40vw; */
+  max-width: 44vw;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  /* border: 1px solid black; */
   transform: translateY(-20%);
   height: 100vh;
 }
+.chat{
+  display: flex;
+  gap: 1rem;
+}
 .chat input {
   width: 40vw;
+  min-width: 40vw;
   border: none;
   border-radius: 10px;
   outline: none;
@@ -59,6 +66,12 @@
 .heading {
   font-size: 1.5rem;
   color: black;
+}
+
+.response{
+  /* border: 1px solid black; */
+  
+  width: 100%;
 }
 .profile {
   width: 45px;
