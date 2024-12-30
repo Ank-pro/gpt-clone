@@ -1,8 +1,9 @@
 import "./main.css";
 import closeImg from "../../assets/close.png";
 import profileImg from "../../assets/profile-img.png";
+import sendImg from "../../assets/send.png";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleSidebar } from "../../slices/centralSlice";
+import { addToRecent, toggleSidebar } from "../../slices/centralSlice";
 import { useEffect, useState } from "react";
 import run from "../../gemini/gem";
 
@@ -10,11 +11,17 @@ export function MainComponent() {
   const dispatch = useDispatch();
   const { showSidebar: isClose } = useSelector((state) => state.central);
   const [message, setMessage] = useState("");
-  const [response,setResponse] = useState("")
+  const [response, setResponse] = useState("");
 
   async function handleMessage() {
     try {
-      const res = await run(message)
+      const res = await run(message);
+      dispatch(
+        addToRecent({
+          user: "user",
+          content: message,
+        })
+      );
       setResponse(res);
     } catch (error) {
       console.log(error);
@@ -46,7 +53,7 @@ export function MainComponent() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-          <button onClick={handleMessage}>Send</button>
+          <img src={sendImg} alt="send-image" onClick={handleMessage}/>
         </div>
         <div className="response">{response}</div>
       </div>

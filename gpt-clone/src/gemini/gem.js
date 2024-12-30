@@ -29,6 +29,7 @@ import {
     });
   
     const result = await chatSession.sendMessage(prompt);
+    
     return result.response.text();
   }
   

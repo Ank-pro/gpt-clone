@@ -7,7 +7,7 @@ import { toggleSidebar } from "../../slices/centralSlice";
 
 export function SideBar() {
   const dispatch = useDispatch();
-  const { showSidebar: isOpen } = useSelector((state) => state.central);
+  const { showSidebar: isOpen, recent } = useSelector((state) => state.central);
 
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
@@ -28,9 +28,9 @@ export function SideBar() {
           <p>Recent</p>
         </div>
         <div className="tabs">
-          {["tab1", "tab2", "tab3", "tab4"].map((ele,ind) => (
+          {recent.map((rec,ind) => (
             <ul key={ind} id="tab">
-              <li>{ele}</li>
+              <li>{rec.content}</li>
             </ul>
           ))}
         </div>
